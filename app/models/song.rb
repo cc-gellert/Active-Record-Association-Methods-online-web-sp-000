@@ -13,7 +13,8 @@ class Song < ActiveRecord::Base
     if(drake) 
       self.artist = drake 
     else 
-    drake || drake = Artist.create(name: "Drake")
-    
+      drake = Artist.create(name: "Drake")
+      self.artist = drake 
+    end 
   end
 end
